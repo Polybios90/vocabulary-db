@@ -1,0 +1,319 @@
+<html>
+<head>
+<title>Vocabulary DB</title>
+<meta name="author" content="VReuter">
+<meta name="editor" content="Sublime Text 2">
+
+<link rel="shortcut icon" type="image/x-icon" href="pics/star-folder.ico">
+<link rel="stylesheet" type="text/css" href="css/vokabel_db.css">
+<link rel="stylesheet" href="js/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+
+
+<script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+<script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+
+
+<script type="text/javascript" src="js/call_perl.js"></script>
+
+
+  </head>
+  <!--   -----------------------------        HTML BODY             ------------------------------------          -->
+  <!---------------------------------------------------------------------------------------------------------------->
+
+
+<body text="#000000">
+
+
+<div id="container" class="ui-widget">
+
+  <!--   -----------------------------        TABS             -----------------------------------------          -->
+  <!---------------------------------------------------------------------------------------------------------------->
+
+
+<div id="tabs">
+
+  <ul id="sup" class="if-super-tab">
+    <li><a href="#opx_system" id="system-tab" class="if-super-tab-textfield">OPx System</a></li>
+  </ul>
+
+
+  <!--   -------------------------------        OPx System       ---------------------------------------          -->
+  <!---------------------------------------------------------------------------------------------------------------->
+
+  <div id="opx_system">
+
+       <ul id="sub1">
+         <li><a href="#interfaces" id="interfaces_tab" class="if-sub-tab-textfield">Interfaces</a></li>
+         <li><a href="#image" id="image_tab" class="if-sub-tab-textfield">Image</a></li>
+         <li><a href="#counter_values" id="counter_values_tab" class="if-sub-tab-textfield">Counter Values</a></li>
+       </ul>
+
+  <!--   -------------------------------        OPx System - Interfaces       --------------------------          -->
+  <!---------------------------------------------------------------------------------------------------------------->
+
+       <div id="interfaces">
+         <h3 style="color: #20B2AA; font-size: 16px;">RS232</h3>
+
+         <div id="OPx-para-1" class="ui-widget-content">
+         <p>
+         <input type="checkbox" id="EnableRS232" />
+         <label for="EnableRS232" class="if-label">Enable RS232</label>
+         </p>
+
+         <p>
+         <label for="DataSize" class="if-label">Data Size [5-8]:</label>
+         <input type="text" id="DataSize" class="if-input" size="3"/>
+
+         <label for="StopBits" class="if-label">Stop Bits [1-2]:</label>
+         <input type="text" id="StopBits" class="if-input" size="3" />
+         </p>
+
+         <p>
+         <label for="BaudRate" class="if-label">Baud Rate:</label>
+                         <select id="BaudRate" class="if-input">
+                         <option value="9600" >9600</option>
+                         <option value="19200">19200</option>
+                         <option value="38400">38400</option>
+                         <option value="57600">57600</option>
+                         <option value="115200">115200</option>
+                         </select>
+
+         <label for="ParityMode" class="if-label">Parity Mode:</label>
+                         <select id="ParityMode" class="if-input">
+                         <option value="0" >None</option>
+                         <option value="1">Odd</option>
+                         <option value="2">Even</option>
+                         </select>
+         </p>
+
+         <p>
+         <label for="TriggerString" class="if-label">Trigger String:</label>
+         <input type="text" id="TriggerString" size="9" class="if-input" />
+         </p>
+         </div>
+
+
+         <h3 style="color: #20B2AA; font-size: 16px;">Network</h3>
+
+         <div id="OPx-para-2" class="ui-widget-content">
+         <p>
+         <input type="checkbox" id="EnableResultPort" /><label for="EnableResultPort" class="if-label">Enable TCP/IP Result</label>
+         <input type="checkbox" id="UDP" /><label for="UDP" style="font-size: 14px;">Enable UDP Result</label>
+         </p>
+
+         <p>
+         <label for="PortOut" class="if-label">Port TCP/IP:</label>
+         <input type="text" id="PortOut" size="5" style="font-size:14px; color: #20B2AA;" />
+
+         <label for="PortOutUdp" class="if-label">Port UDP:</label>
+         <input type="text" id="PortOutUdp" size="5" style="font-size:14px; color: #20B2AA;" />
+         </p>
+         </div>
+
+
+         <h3 style="color: #20B2AA; font-size: 16px;">Other</h3>
+
+         <div id="OPx-para-3" class="ui-widget-content">
+         <p>
+         <input type="checkbox" id="PosLeds" /><label for="PosLeds" class="if-label">Position LEDs</label>
+         </p>
+
+         <p>
+         <label for="SensorName" class="if-label">Sensor Name:</label>
+         <input type="text" id="SensorName" size="20" style="font-size:14px; color: #20B2AA;" />
+         </p>
+         </div>
+
+
+         <h3 style="color: #20B2AA; font-size: 16px;">Digital I/O</h3>
+
+         <div id="OPx-para-4" class="ui-widget-content">
+         <p>
+         <label for="PulseLengthGOOD" class="if-label">Pulse Length GOOD:</label>
+         <input type="text" id="PulseLengthGOOD" size="4" style="font-size:14px; color: #20B2AA;"/>
+
+         <label for="PulseLengthBAD" class="if-label">Pulse Length BAD:</label>
+         <input type="text" id="PulseLengthBAD" size="4" style="font-size:14px; color: #20B2AA;"/>
+         </p>
+         </div>
+       </div>
+
+  <!--   -------------------------------        OPx System - Image       -------------------------------          -->
+  <!---------------------------------------------------------------------------------------------------------------->
+
+       <div id="image">
+          <h3 style="color: #20B2AA; font-size: 16px;">Format</h3>
+
+           <div id="OPx-para-5" class="ui-widget-content">
+           <p>
+           <label for="ImageFormat" class="if-label">Image Format:</label>
+                         <select id="ImageFormat" class="if-input">
+                         <option value="0">752 x 480</option>
+                         <option value="1">752 x 240</option>
+                         <option value="2">752 x 120</option>
+                         <option value="3">752 x 160</option>
+                         </select>
+           </p>
+
+           <p>
+                 <label for="ImageFinePosition" class="if-label">Image Fine Pos. [(-50)-50]:</label>
+                 <input type="number" id="ImageFinePosition" class="if-input" min="-50" max="50" value="1"/>  <label class="if-label"> Rows </label>
+           </p>
+           </div>
+
+          <h3 style="color: #20B2AA; font-size: 16px;">Transfer</h3>
+           <div id="OPx-para-6" class="ui-widget-content">
+           <p>
+                 <input type="checkbox" id="ImageTransferActive" /><label for="ImageTransferActive"  class="if-label">Image Transfer Active</label>
+           </p>
+
+
+           <p>
+           <label for="ImageSelectTransfer" class="if-label">Transfer Images:</label>
+                         <select id="ImageSelectTransfer" class="if-input">
+                         <option value="0">Error Images</option>
+                         <option value="1">Good Images</option>
+                         <option value="2" >All Images</option>
+                         </select>
+           </p>
+           </div>
+
+           <h3 style="color: #20B2AA; font-size: 16px;">Buffer</h3>
+           <div id="OPx-para-7" class="ui-widget-content">
+           <p>
+                 <input type="checkbox" id="OverwriteBuffer" /><label for="OverwriteBuffer"  class="if-label"">Overwrite Buffer</label>
+           </p>
+
+           <p>
+           <label for="ImageSelectBuffer" class="if-label">Buffer Images:</label>
+                         <select id="ImageSelectBuffer" style="font-size:14px; color: #20B2AA;">
+                         <option value="0">Error Images</option>
+                         <option value="1">Good Images</option>
+                         <option value="2" >All Images</option>
+                         </select>
+           </p>
+           </div>
+       </div>
+
+  <!--   -------------------------------        OPx System - Counter Values      -----------------------          -->
+  <!---------------------------------------------------------------------------------------------------------------->
+
+       <div id="counter_values">
+          <h3 style="color: #20B2AA; font-size: 16px;">Internal Counter</h3>
+           <div id="OPx-para-8-labels">
+           <p>
+            <label for="TriggerExecuted" class="if-label">Triggers Executed:</label>
+           </p>
+           <p>
+            <label for="TriggerExecutedMultiImage" class="if-label">Triggers Executed MI:</label>
+           </p>
+           <p>
+            <label for="TriggerMissedDuringCapture" class="if-label">Triggers Missed During Capture:</label>
+           </p>
+           <p>
+            <label for="TriggerMissedDuringProcessing" class="if-label">Triggers Missed During Processing:</label>
+           </p>
+           <p>
+            <label for="TriggerMissedOnUserDemand" class="if-label">Triggers Missed On User Demand:</label>
+           </p>
+           </div>
+
+           <div id="OPx-para-8">
+                 <p style="margin-top:1em; margin-bottom:0.6em; margin-left:0.6em;">
+                 <input type="text" id="TriggerExecuted" value="0" size="9" style="font-size: 14px; color: #20B2AA;" disabled/>
+                 </p>
+                 <p style="margin:0.6em;">
+                 <input type="text" id="TriggerExecutedMultiImage" value="0" size="9" style="font-size: 14px; color: #20B2AA;" disabled/>
+                 </p>
+                 <p style="margin:0.6em;">
+                 <input type="text" id="TriggerMissedDuringCapture" value="0" size="9" style="font-size: 14px; color: #20B2AA;" disabled/>
+                 </p>
+                 <p style="margin:0.6em;">
+                 <input type="text" id="TriggerMissedDuringProcessing" value="0" size="9" style="font-size: 14px; color: #20B2AA;" disabled/>
+                 </p>
+                 <p style="margin:0.6em;">
+                 <input type="text" id="TriggerMissedOnUserDemand" value="0" size="9" style="font-size: 14px; color: #20B2AA;" disabled/>
+                 </p>
+           </div>
+
+           <p style="position: relative; bottom: 160px;">
+            <button id="ResetCounters">Reset Internal Counters</button>
+           </p>
+
+       </div>
+
+  </div>
+
+  
+
+ <!--   -------------------------------------      TABS END       -------------------------------------          -->
+ <!---------------------------------------------------------------------------------------------------------------->
+
+ </div>
+
+ <!--    ------------------------------------       Channel       -------------------------------------          -->
+ <!---------------------------------------------------------------------------------------------------------------->
+
+ <div id="channel" class="ui-widget-content">
+        <img src="pics/vtr_logo.png" title="VTR Logo">
+
+        <p style="font-size:14px">
+        <label for="Firmware" class="if-label" >Firmware:</label>
+        <input type="text" id="Firmware" size="20" class="channel-input" disabled/>
+        <br>
+        <label for="MACAdress" class="if-label" >MAC Address:</label>
+        <input type="text" id="MACAdress" size="16" class="channel-input" disabled/>
+        </p>
+
+        <div id="picview">
+
+                 <img id="img1" width="290" height="185"  title="Trigger Image" >
+        </div>
+
+        <div id="channel-content">
+        <p id="trigger-buttom-set" style="margin-bottom:0px;">
+        <button id="TriggerLiveMode">Start Live Mode</button>
+        <button id="TriggerStart">Trigger</button>
+        </p>
+
+        <p style="font-size:14px; margin-top:0px;">
+        <label for="TrgsExecuted" class="if-label" >Triggers Executed:</label>
+        <input type="text" id="TrgsExecuted" size="5" class="channel-input" disabled/>
+        <br>
+        <label for="TrgsExecutedMI" class="if-label" >Triggers Executed MI:</label>
+        <input type="text" id="TrgsExecutedMI" size="5" class="channel-input" disabled/>
+        <br>
+        <label for="MissedTriggerDC" class="if-label" >Missed During Capture:</label>
+        <input type="text" id="MissedTriggerDC" size="5" class="channel-input" disabled/>
+        <br>
+        <label for="MissedTriggerDP" class="if-label" >Missed During Process:</label>
+        <input type="text" id="MissedTriggerDP" size="5" class="channel-input" disabled/>
+        <br>
+        <label for="MissedTriggerOD" class="if-label" >Missed On Demand:</label>
+        <input type="text" id="MissedTriggerOD" size="5" class="channel-input" disabled/>
+        <br>
+        <label for="ResultTime" class="if-label" >Decoding Time:</label>
+        <input type="text" id="ResultTime" size="10" class="channel-input" disabled/>
+        </p>
+
+        <label for="ResultLog" class="if-label" >Result Log:</label>
+        <input type="text" id="ResultLog" size="10" class="channel-input" disabled/>
+
+        <div id="output" style="overflow-x:hidden; overflow-y:auto;">
+        </div>
+
+        <p id="version_no" style="font-size:8px; float:right; position:relative;">
+        Version 1.28
+        </p>
+
+        </div>
+ </div>
+
+</div>
+
+
+
+</body>
+</html>

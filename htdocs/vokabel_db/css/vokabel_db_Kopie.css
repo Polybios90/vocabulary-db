@@ -1,0 +1,82 @@
+body { margin:5px; text-align: center; background-image:url("data:image/gif;base64,R0lGODlhAQAEAIAAAPLy8v///yH5BAAAAAAALAAAAAABAAQAAAICjFEAOw==");}
+a {font-size: 12px;}
+#container {
+         background-color: #858585;
+         margin: auto;
+         position: relative;
+         width: 1068px;
+         height: 854px;
+         }
+#channel { position: absolute; width: 290px; height: 834px; left:758px; text-align: left; }
+#picview { width: 290px; position: absolute; background-color: #1A736F; border: solid 1px;}
+/* Note: Transfer Factors in webIntEventHandlers.js -> 290, 185*/
+
+#channel-content {position: absolute; margin-top: 180px;}
+.channel-input  {font-size: 14px !important;font-weight: normal !important; color: #00A886; background-color: white; border:0;}
+#TriggerStart, #TriggerLiveMode{ width: 48.3%; }
+
+#output{ width: 290px; height: 300px; border: solid 1px; border-color: LightGray}
+
+
+#tabs { width: 738px ; height: 834px; text-align: left; overflow: auto; float:left;}
+
+#opx_system { padding-top: 10px;}
+#interfaces { border-width: 1px; }
+#image { border-width: 1px; }
+#counter_values { border-width: 1px; }
+
+#windows { padding-top: 30px;}
+#window_1 { border-width: 1px; }
+#window_2 { border-width: 1px; }
+#window_3 { border-width: 1px; }
+#window_4 { border-width: 1px; }
+
+#OPx-para-8 { width:100px; position: relative; left:316px; bottom: 174px;}
+#OPx-para-8-labels { position: relative;}
+
+
+.if-label { font-size: 14px; }
+
+.if-input  {font-size: 14px !important; font-weight: normal !important; color: #20B2AA;}
+
+.if-super-tab-textfield{
+         height: 25px !important;
+         font-size: 15px;
+         padding: 0.2em 0.2em 0.1em !important;
+         }
+.if-super-tab { height: 32px !important; background-color:#858585; }
+.if-sub-tab-textfield { font-size: 14px; padding: 0.3em !important; }
+.check-center { position: relative; left:180px; bottom: 308px; width:125px;}
+.check-right { position: relative; left:320px; bottom: 205px; }
+.radio-left { width:200px; position: relative; left: 10px; }
+.radio-right { width:150px; position: relative; left:265px; bottom: 121px; }
+.DD-center { position: relative; bottom: 170px; }
+.input-bottom { position: relative; bottom: 120px; }
+.ui-widget-content {padding: 0.5em;}
+
+/* Nutzen fraglich? .ui-menu-item { width: 154px !important; } */
+.ui-button-text {color: #20B2AA; font-size: 12px; font-weight: bold; }
+
+/*       slider for MAC4xx/5xx, maybe instead of <input type = "number">
+.ui-slider-horizontal {height: 0.01em !important; margin-left:5px; margin-right:5px;}
+.ui-slider-handle {height:1.8em !important; width:1em !important;}
+*/
+.no-padding {padding: 0 !important;}
+input[type=number]{
+         width: 50px;
+         font-weight: bold;
+         font-size: 14px;
+         }
+.draggable {
+         border: 1px solid;
+         background-color: rgba(0,0,0,0);
+         position: absolute; z-index:1;
+         -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE8 in Standard Compliant Mode; semi: 50 */
+         filter:alpha(opacity=50); /* IE5.x -7.0; semi: 50*/
+         }
+.opacity {
+    opacity: 0.5;       /* modern browser; semi: 0.5 */
+    -moz-opacity: 0.5;  /* older Mozilla browser; semi: 0.5 */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE8 in Standard Compliant Mode; semi: 50 */
+    filter:alpha(opacity=50); /* IE5.x -7.0; semi: 50*/
+}
