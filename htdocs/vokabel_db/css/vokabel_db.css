@@ -1,3 +1,45 @@
 body {
-    background-color: #b4eeb4;
+    background-color: #000000; margin:0px; text-align: center;
 } 
+
+a {font-size: 12px;}
+#container {
+         background-color: #000000;
+         margin: auto;
+         position: relative;
+         width: 100%;
+         height: 100%;
+         float: left;
+         }
+#tabs { width: 70% ; height: 100%; text-align: left; overflow: auto; float:left;}
+#sidebarview { position: relative; background-color: #000000; width: 28.5%; margin-top: 1px; height: 101%; float:right; text-align: left; overflow: scroll; }
+#picview {  width: 336px; height: 188px; position: absolute; background-color: #FFA500; border: solid 1px; margin-left: 5px;}
+#img1 {width: 336px; height: 188px; }
+
+#sidebarview-content {position: absolute; margin-top: 180px;}
+.sidebarview-input  {font-size: 14px !important;font-weight: normal !important; color: #FFA500; background-color: white; border:0;}
+
+
+.if-label { font-size: 14px; }
+
+.if-input  {font-size: 14px !important; font-weight: normal !important; color: #FFA500;}
+
+.if-super-tab-textfield{
+         height: 25px !important;
+         font-size: 15px;
+         padding: 0.2em 0.2em 0.1em !important;
+         }
+.if-super-tab { height: 32px !important; background-color:#858585; }
+.if-sub-tab-textfield { font-size: 14px; padding: 0.3em !important; }
+
+.input-bottom { position: relative; bottom: 120px; }
+
+
+.ui-button-text {color: #FFA500; font-size: 12px; font-weight: bold; }
+
+.no-padding {padding: 0 !important;}
+input[type=number]{
+         width: 50px;
+         font-weight: bold;
+         font-size: 14px;
+         }

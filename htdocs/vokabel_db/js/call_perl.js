@@ -1,6 +1,7 @@
 
 $( document ).ready(function() {
 
+
     $.get( "/cgi-bin/perl-test2.pl", function( data ) {
 
 		console.log("hi from jquery");
@@ -9,6 +10,7 @@ $( document ).ready(function() {
 
 	// initialization
 	
+	$( "#tabs" ).tabs();
 	$("#test").button();
 	
 	$xml_post2 = '<?xml version="1.0" encoding="UTF-8"?> <data_body> <table>business_english</table><vocabulary language="english" word="bias"/><vocabulary language="deutsch" word="Tendenz"/></data_body>';

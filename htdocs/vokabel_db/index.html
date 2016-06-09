@@ -1,33 +1,122 @@
-<!DOCTYPE html>
 <html>
 <head>
 <title>Vocabulary DB</title>
+<meta name="author" content="VReuter">
+<meta name="editor" content="Sublime Text 2">
+
 <link rel="shortcut icon" type="image/x-icon" href="pics/star-folder.ico">
 <link rel="stylesheet" type="text/css" href="css/vokabel_db.css">
-<link rel="stylesheet" href="js/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+<link rel="stylesheet" href="css/jquery-ui.min.css">
 
 <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
 
 
-<script src="js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
-<script src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 
 
 <script type="text/javascript" src="js/call_perl.js"></script>
 
-</head>
+
+  </head>
+  <!--   -----------------------------        HTML BODY             ------------------------------------          -->
+  <!---------------------------------------------------------------------------------------------------------------->
 
 
-<body>
-<h2><br>Welcome VTR<br></h2>
+<body text="#000000">
+
+
+<div id="container" class="ui-widget">
+
+  <!--   -----------------------------        TABS             -----------------------------------------          -->
+  <!---------------------------------------------------------------------------------------------------------------->
+
+
+<div id="tabs">
+
+  <ul id="sup" class="if-super-tab">
+    <li><a href="#voc_db" id="system-tab" class="if-super-tab-textfield">Vokabel DB</a></li>
+  </ul>
+
+
+  <!--   -------------------------------        Vokabel DB       ---------------------------------------          -->
+  <!---------------------------------------------------------------------------------------------------------------->
+
+  <div id="voc_db">
+
+
+      <h2><br>Welcome VTR<br></h2>
      
-<button id="test" >Testing</button>
+      <button id="test" >Testing</button>
 
-<br><br>
+      <br><br>
 
-<div class="demo-container">
+      <div class="demo-container">
 
-  <div class="demo-box">Demonstration Box</div>
+        <div class="demo-box">Demonstration Box</div>
+
+      </div>
+
+      <h3 style="color: #FFA500; font-size: 16px;">DB Select</h3>
+
+         <div id="selection-block-1" class="ui-widget-content">
+         <p>
+         <input type="checkbox" id="EnableSQL" />
+         <label for="EnableSQL" class="if-label">Enable SQL</label>
+         </p>
+
+         <p>
+         <label for="Table" class="if-label">Table</label>
+                         <select id="Table" class="if-input">
+                         <option value="business_english" >Business English</option>
+                         </select>
+         </p>
+
+
+         <p>
+         <label for="English" class="if-label">English</label>
+         <input type="text" id="English" class="if-input" size="20"/>
+
+         <label for="Deutsch" class="if-label">Deutsch</label>
+         <input type="text" id="Deutsch" class="if-input" size="20" />
+         </p>
+
+
+         </div>
+
+       </div>
+
+  
+
+ <!--   -------------------------------------      TABS END       -------------------------------------          -->
+ <!---------------------------------------------------------------------------------------------------------------->
+
+ </div>
+
+ <!--    ------------------------------------       Sidebar View       -------------------------------------          -->
+ <!---------------------------------------------------------------------------------------------------------------->
+
+ <div id="sidebarview" class="ui-widget-content">
+        <img src="pics/vtr-logo-bo.jpg" width="290" height="135" title="VTR Logo">
+
+        <p style="font-size:14px">
+        <label id="MACAdress" class="if-label">MAC Address</label>
+        <br>
+        <label id="User" class="if-label">User</label>
+
+        </p>
+
+        <div id="picview">
+
+                 <img id="img1" src="pics/Orange-Sunset-small.jpg"  title="Orange Sunset Image" >
+        </div>
+
+
+        <p id="version_no" style="font-size:8px; float:right; position:relative; color:"#ffffff">
+        Version 1.0.0
+        </p>
+
+        </div>
+ </div>
 
 </div>
 
