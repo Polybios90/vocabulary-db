@@ -1,0 +1,72 @@
+body {
+    background-color: #000000; margin:10px; text-align: center;
+} 
+
+th{
+    color: white;
+    font-weight: bold;
+    font-size: 10pt;
+}
+td{
+    color: white;
+    font-size: 10pt;
+}
+
+a {font-size: 10pt;}
+#container {
+         background-color: #000000;
+         margin: auto;
+         position: relative;
+         width: 100%;
+         height: 100%;
+         float: left;
+         }
+#voc_db { 
+    text-align: left; 
+    overflow: auto; 
+}
+
+.ui-button {
+    width: 300px;
+}
+
+#sidebarview-content {position: absolute; margin-top: 180px;}
+
+#submit-lang {margin:5px;}
+
+.if-label { 
+			font-size: 12pt;  
+			display: inline-block;
+  			width: 140px;
+  			margin-left: 5px;
+  		}
+
+.if-input  {
+    font-size: 12pt !important; 
+    font-weight: normal !important; 
+    color: #FFA500;}
+
+.if-super-tab-textfield{
+         height: 25px !important;
+         width: 150px;
+         font-size: 15pt;
+         padding: 0.2em 0.1em !important;
+         }
+.if-super-tab { height: 32px !important; background-color:#858585; }
+.if-sub-tab-textfield { font-size: 12px; padding: 0.3em !important; }
+
+.input-bottom { position: relative; bottom: 120px; }
+
+
+.ui-button-text {color: #FFA500; font-size: 10pt; font-weight: bold; }
+
+.ui-widget {
+    font-size: 10pt !important;
+    color: white !important;
+}
+.no-padding {padding: 0 !important;}
+input[type=number]{
+         width: 50px;
+         font-weight: bold;
+         font-size: 12pt;
+         }
