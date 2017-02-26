@@ -5,12 +5,18 @@
       <title>Vocabulary DB</title>
       <meta name="author" content="VReuter">
       <meta name="editor" content="Sublime Text 2">
+      
       <link rel="shortcut icon" type="image/x-icon" href="pics/star-folder.ico">
       <link rel="stylesheet" type="text/css" href="css/vokabel_db.css">
       <link rel="stylesheet" href="css/jquery-ui.min.css">
       <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
       <script src="js/jquery-ui.min.js"></script>
       <script type="text/javascript" src="js/call_perl.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/ju-1.11.4/jq-2.2.4/jszip-2.5.0/pdfmake-0.1.18/dt-1.10.13/af-2.1.3/b-1.2.4/b-colvis-1.2.4/b-html5-1.2.4/b-print-1.2.4/cr-1.3.2/fc-3.2.2/fh-3.1.2/kt-2.2.0/r-2.1.0/rr-1.2.0/sc-1.4.2/se-1.2.0/datatables.min.css"/>
+ 
+      <script type="text/javascript" src="https://cdn.datatables.net/v/ju-1.11.4/jq-2.2.4/jszip-2.5.0/pdfmake-0.1.18/dt-1.10.13/af-2.1.3/b-1.2.4/b-colvis-1.2.4/b-html5-1.2.4/b-print-1.2.4/cr-1.3.2/fc-3.2.2/fh-3.1.2/kt-2.2.0/r-2.1.0/rr-1.2.0/sc-1.4.2/se-1.2.0/datatables.min.js"></script>
+
    </head>
    <!--   -----------------------------        HTML BODY             ------------------------------------          -->
    <!---------------------------------------------------------------------------------------------------------------->
@@ -24,23 +30,22 @@
                <p>
                   <label for="Table" class="if-label">Table</label>
                   <select id="Table" class="if-input">
-                     <!--                         <option value="business_english" >Business English</option>
-                        <option value="sophisticated_english" >Sophisticated English</option>
-                        -->
+                     <option value="business_english" >Business English</option>
+                     <option value="sophisticated_english" >Sophisticated English</option>
+                     <option value="mixed_russki">Russian</option>
                   </select>
                </p>
                <p>
-                  <label for="English" class="if-label">English</label>
-                  <input type="text" id="English" class="if-input" size="20"/>
+                  <label id="Translation-Label" class="if-label">English</label>
+                  <input type="text" id="Translation" class="if-input" />
                </p>
                <p>
-                  <label for="Deutsch" class="if-label">Deutsch</label>
-                  <input type="text" id="Deutsch" class="if-input" size="20" />
+                  <label id="Deutsch-Label" class="if-label">Deutsch</label>
+                  <input type="text" id="Deutsch" class="if-input" />
                </p>
-               <button id="submit-lang" >Submit</button>
+               <button id="submit-lang-button" >Submit</button>
             </div>
          </div>
-                  <button id="test" style="top: 5px;">Retrieve Table</button>
          <br><br>
             <div class="demo-container">
                <div class="demo-box"></div>

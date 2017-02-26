@@ -5,18 +5,11 @@
         text-align: center;
     }
     h3 {
-        color: #FFA500;
-        font-size: 12pt;
+        color: #F6A828;
+        font-size: 14pt;
+        text-align: center;
     }
-    th {
-        color: white;
-        font-weight: bold;
-        font-size: 10pt;
-    }
-    td {
-        color: white;
-        font-size: 10pt;
-    }
+
     a {
         font-size: 10pt;
     }
@@ -32,26 +25,44 @@
         text-align: left;
         overflow: auto;
     }
-    .ui-button {
-        width: 300px;
-    }
+
     #sidebarview-content {
         position: absolute;
         margin-top: 180px;
     }
-    #submit-lang {
-        margin: 5px;
+    #submit-lang-button {
+        margin-left: 20%;
+        margin-bottom: 5px;
     }
+
+    #selection-block-1{
+        margin-left: 25%;
+        width: 50%;
+    }
+
+    .fg-button{
+        width: auto !important;
+    }
+
+    .demo-container {
+    margin-left: 25%;
+    width: 50%;
+    }
+
+    .ui-button {
+        width: 300px;
+    }
+
     .if-label {
         font-size: 12pt;
         display: inline-block;
         width: 140px;
-        margin-left: 5px;
+        margin-left: 20%;
     }
     .if-input {
         font-size: 12pt !important;
         font-weight: normal !important;
-        color: #FFA500;
+        color: #F6A828;
     }
     .ui-button {
         width: 320px;
@@ -74,8 +85,12 @@
         position: relative;
         bottom: 120px;
     }
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, input[type=search]{
+        color: #f6a828 !important;
+    }
+
     .ui-button-text {
-        color: #FFA500;
+        color: #F6A828;
         font-size: 10pt;
         font-weight: bold;
     }
@@ -83,9 +98,20 @@
         font-size: 10pt !important;
         color: white !important;
     }
+    .ui-widget-content{
+        border: 2px solid #f6a828 !important;
+        border-radius: 4px;
+        background: white !important;
+    }
     .no-padding {
         padding: 0 !important;
     }
+        input[type=number] {
+        width: 50px;
+        font-weight: bold;
+        font-size: 12pt;
+    }
+
     input[type=number] {
         width: 50px;
         font-weight: bold;
@@ -99,17 +125,9 @@
         text-align: center;
     }
     h3 {
-        color: #FFA500;
+        color: #F6A828;
         font-size: 26pt;
-    }
-    th {
-        color: white;
-        font-weight: bold;
-        font-size: 18pt;
-    }
-    td {
-        color: white;
-        font-size: 18pt;
+        text-align: center;
     }
     a {
         font-size: 10pt;
@@ -126,13 +144,29 @@
         text-align: left;
         overflow: auto;
     }
-    .ui-button {
-        width: 300px;
-    }
+
     #sidebarview-content {
         position: absolute;
         margin-top: 180px;
     }
+
+    #selection-block-1{
+        margin-left: 25%;
+        width: 50%;
+    }
+    .fg-button{
+        width: auto !important;
+    }
+
+    .demo-container {
+    margin-left: 25%;
+    width: 50%;
+    }
+
+    .ui-button {
+        width: 300px;
+    }
+
     .if-label {
         font-size: 30pt;
         width: 140px;
@@ -142,7 +176,7 @@
     .if-input {
         font-size: 30pt !important;
         font-weight: normal !important;
-        color: #FFA500;
+        color: #F6A828;
         width: 60%;
         height: 100px;
         margin-left: 10%;
@@ -166,7 +200,7 @@
         bottom: 120px;
     }
     .ui-button-text {
-        color: #FFA500;
+        color: #F6A828;
         font-size: 30pt;
         font-weight: bold;
     }
@@ -179,6 +213,15 @@
         font-size: 10pt !important;
         color: white !important;
     }
+    .ui-widget-content{
+        border: 2px solid #f6a828 !important;
+        border-radius: 4px;
+        background: white !important;
+    }
+        .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+        color: #f6a828 !important;
+    }
+
     .no-padding {
         padding: 0 !important;
     }
@@ -189,7 +232,7 @@
         font-size: 12pt;
     }
 */
-    #submit-lang{
+    #submit-lang-button{
         margin-left: 20%;
     }
     #version_no{

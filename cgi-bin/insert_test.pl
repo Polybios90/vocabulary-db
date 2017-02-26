@@ -18,9 +18,6 @@ use Encode qw(encode decode);
 
 use feature 'say';
 
-
-#use DMR::CGI;
-
 ### TEST
 my $enc = 'utf-8';
 my $q = CGI->new;
@@ -33,8 +30,8 @@ my $xs = XML::Simple->new;
 my @params = $q->param(); #only works for http post? Because param contains HTTP body
 
 my $table = $q->param($params[0]);
-my $language =  $q->param($params[1]);
-my $translation = $q->param($params[2]);
+my $translation =  $q->param($params[1]);
+my $german = $q->param($params[2]);
 my $voc1 = decode($enc, $q->param($params[3]));
 my $voc2 = decode($enc, $q->param($params[4]));
 
@@ -53,8 +50,8 @@ if(@params){
 	 }
 	 else
 	 {
-	    $q->header();
-	    print '<?xml version="1.0" encoding="UTF-8" ?>';
+	    print $q->header(	-type=> 'text/html', -charset=>'utf-8');
+	    # print '<?xml version="1.0" encoding="UTF-8" ?>';
 	 }
 }
 else{
@@ -79,7 +76,7 @@ if ($DBI::errstr)
 	print $DBI::errstr;
 }
 #database check if entry already exists
-my $sql = 'SELECT distinct english FROM ' . $table . ' WHERE english = "' . $voc1 . '" AND deutsch = "' . $voc2 . '"';
+my $sql = 'SELECT distinct ' . $translation . ' FROM ' . $table . ' WHERE ' . $translation . ' = "' . $voc1 . '" AND ' . $german . ' = "' . $voc2 . '"';
 my $sth = $dbh->prepare($sql);
 $sth->execute();
 my @row = $sth->fetchrow_array;
@@ -90,7 +87,7 @@ if (@row || @row != undef){
 # TODO check $sth->err
 
 # database insertion
-$sql = 'INSERT INTO ' . $table . ' (' . $translation . ', ' . $language . ', create_date) VALUES ("' . $voc2 . '", "' . $voc1 . '", CURRENT_DATE)';
+$sql = 'INSERT INTO ' . $table . ' (' . $german . ', ' . $translation . ', create_date) VALUES ("' . $voc2 . '", "' . $voc1 . '", CURRENT_DATE)';
 # print $sql . "\n\n";
 $sth = $dbh->prepare($sql);
 $sth->execute;
@@ -99,32 +96,45 @@ $sth->execute;
 
 
 # database queries and responses
-$sql = 'SELECT english, deutsch FROM ' . $table . ' WHERE id >= ? AND id < ?';
+$sql = 'SELECT ' . $translation . ', ' . $german . ' FROM ' . $table . ' WHERE id >= ? AND id < ?';
 $sth = $dbh->prepare($sql);
-# $sth->execute(0, 15);
- print "<p>
-    	<table>
-    	<tr>
-    		<td>english</td> <td>deutsch</td>
-    	</tr>";
-# while (my @row = $sth->fetchrow_array) {
-#    print "	<tr>
-#    			<td>$row[0]</td> <td>$row[1]</td>
-#    		</tr>";
-#}
- 
-$sth->execute(0, 100);
-while (my $row = $sth->fetchrow_hashref) {
-   print "	<tr>
-    			<td>$row->{english}</td> <td>$row->{deutsch}</td>
-    		</tr>";
-}
-print "</table>
-    	</p>";
-
-
+printTable($sth, $translation);
  
 $dbh->disconnect;
+
+sub printTable (*$){
+	my ($sth, $translation) = @_;
+	my $q = CGI->new;
+	my @td;
+
+	$sth->execute(0, 100);
+	if ($sth::errstr)
+	{
+		print $sth::errstr;
+	}
+
+	while ( my $row = $sth->fetchrow_hashref ) {
+    	if($translation eq "russian"){
+    		push @td, $q->td( [ $row->{russian}, $row->{deutsch} ] );
+    	}
+    	else{
+    		push @td, $q->td( [ $row->{english}, encode('utf-8', $row->{deutsch}) ] );
+    	}
+	}
+	my $TranslationTitle = 'English';
+	if($translation eq "russian"){
+		$TranslationTitle = 'Russian'
+	}
+
+	print $q->table(
+		{ -border => 1 },
+		$q->Tr( 
+			{ -align => "CENTER", -valign => "TOP" },
+    		$q->th( [ $TranslationTitle, 'Deutsch' ] )
+ 		),
+ 		$q->Tr( \@td )
+	);
+}
 
 sub sendError{
 	my $msg = shift;
